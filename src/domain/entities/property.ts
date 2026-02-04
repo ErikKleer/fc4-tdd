@@ -10,6 +10,9 @@ export class Property {
     private maxGuests: number,
     private basePricePerNight: number
   ) {
+    if (!id) {
+      throw new Error("O id da propriedade é obrigatório.");
+    }
     if (!name) {
       throw new Error("O nome é obrigatório");
     }
