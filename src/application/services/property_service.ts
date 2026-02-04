@@ -7,4 +7,9 @@ export class PropertyService {
   async findPropertyById(id: string): Promise<Property | null> {
     return this.propertyRepository.findById(id);
   }
+
+  async createProperty(property: Property): Promise<Property> {
+    await this.propertyRepository.save(property);
+    return property;
+  }
 }

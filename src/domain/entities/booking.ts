@@ -21,6 +21,22 @@ export class Booking {
     dateRange: DateRange,
     guestCount: number
   ) {
+    if (!id) {
+      throw new Error("O id da reserva é obrigatório.");
+    }
+
+    if (!property) {
+      throw new Error("A propriedade é obrigatória.");
+    }
+
+    if (!guest) {
+      throw new Error("O hóspede é obrigatório.");
+    }
+
+    if (!dateRange) {
+      throw new Error("O intervalo de datas é obrigatório.");
+    }
+
     if (guestCount <= 0) {
       throw new Error("O número de hóspedes deve ser maior que zero.");
     }
